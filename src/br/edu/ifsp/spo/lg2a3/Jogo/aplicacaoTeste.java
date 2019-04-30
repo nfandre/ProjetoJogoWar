@@ -15,8 +15,8 @@ public class aplicacaoTeste {
 		
 		Jogador j2 = new Jogador("Alisson");
 		
-		Exercito a = new Exercito(j1.getNomeUsuario() ,10);
-		Exercito b = new Exercito(j2.getNomeUsuario(),6);
+		Exercito a = new Exercito(j1.getNomeUsuario() ,10, TipoExercito.ataque );
+		Exercito b = new Exercito(j2.getNomeUsuario(),6, TipoExercito.defesa);
 		Territorio d1 = new Territorio();
 		
 		d1.exercitos.put(1, a);
