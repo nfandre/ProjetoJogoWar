@@ -1,4 +1,4 @@
-package br.edu.ifsp.spo.l2a3;
+package br.edu.ifsp.spo.lg2a3.Jogo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Random;

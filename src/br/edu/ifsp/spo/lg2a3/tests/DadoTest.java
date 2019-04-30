@@ -1,8 +1,10 @@
-package br.edu.ifsp.spo.l2a3;
+package br.edu.ifsp.spo.lg2a3.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import br.edu.ifsp.spo.lg2a3.Jogo.Dado;
 
 class DadoTest {
 
