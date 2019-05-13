@@ -1,16 +1,18 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
-public class Exercito extends Jogador {
+public class Exercito {
 	
 	private int QuantidadeExercito;
 	
 	
-	public Exercito(String nomeUsuario, int quantidadeExercito, TipoExercito tipoexercito){
-		super(nomeUsuario);
+	public Exercito(int quantidadeExercito, TipoExercito tipoexercito){
+		
 		QuantidadeExercito = quantidadeExercito;
 	}
 	
-
+	
+	
+	
 	public int getQuantidadeExercito() {
 		return QuantidadeExercito;
 	}

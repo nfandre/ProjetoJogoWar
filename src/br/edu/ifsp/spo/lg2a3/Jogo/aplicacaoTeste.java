@@ -11,20 +11,23 @@ public class aplicacaoTeste {
 		System.out.println(d.realizarRolagem());
 		System.out.println(d.realizarRolagem());
 		
-		Jogador	j1 = new Jogador("Andre");
+//		Jogador	j1 = new Jogador("Andre");
+//		
+//		Jogador j2 = new Jogador("Alisson");
 		
-		Jogador j2 = new Jogador("Alisson");
+//		Exercito a = new Exercito(j1.getNomeUsuario() ,10, TipoExercito.ataque );
+//		Exercito b = new Exercito(j2.getNomeUsuario(),6, TipoExercito.defesa);
+//		Exercito c = new Exercito(j2.getNomeUsuario(),6,TipoExercito.ataque);
 		
-		Exercito a = new Exercito(j1.getNomeUsuario() ,10, TipoExercito.ataque );
-		Exercito b = new Exercito(j2.getNomeUsuario(),6, TipoExercito.defesa);
-		Territorio d1 = new Territorio();
+//		Territorio d1 = new Territorio();
 		
-		d1.exercitos.put(1, a);
-		d1.exercitos.put(2, b);
-		
-		for(Exercito e: d1.exercitos.values()) {
-			System.out.println(e.getNomeUsuario() + e.getQuantidadeExercito());
-		}
+//		d1.exercitos.put(1, a);
+//		d1.exercitos.put(2, b);
+//		
+//		for(Exercito e: d1.exercitos.values()) {
+//			System.out.println(e.getNomeUsuario() + e.getQuantidadeExercito());
+//			System.out.println(j1.getNomeUsuario());
+//		}
 		
 	}
 
