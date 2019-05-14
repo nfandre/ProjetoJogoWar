@@ -1,20 +1,23 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Territorio {
 	
-	 public Territorio() {
-		 
-	 }
-	 public static int QuantidadeTerritorio;
-	 Map<Jogador, Exercito> exercitosJogadores = new HashMap<>();
+	private String Nome;
+
 	
-	 public void separarTerrritoriosJogador(Collection<Jogador> jogadores, Map<Integer, Exercito> exercitos ) {
-		 
-	 }
-	 
+	public Territorio(String nome) {
+		Nome =nome;
+	}
+	
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		this.Nome = nome;
+	}
+	
+ 
 	 
 }

@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public class Pais {
 	
-	private static int quantidadeTerritorios;
+	//private static int quantidadeTerritorios;
 	private static Collection <Territorio> Pais = new ArrayList<Territorio>();
 	
 
