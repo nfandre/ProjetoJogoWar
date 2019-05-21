@@ -17,7 +17,5 @@ public class Territorio {
 	public void setNome(String nome) {
 		this.Nome = nome;
 	}
-	
- 
 	 
 }
