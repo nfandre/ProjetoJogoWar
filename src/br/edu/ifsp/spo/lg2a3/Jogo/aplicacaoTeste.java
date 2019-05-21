@@ -29,6 +29,22 @@ public class aplicacaoTeste {
 //			System.out.println(j1.getNomeUsuario());
 //		}
 		
+		
+		
+		Continente Africa = new Continente();
+		Continente Europa = new Continente();
+		Continente AmericaSul = new Continente();
+		Continente AmericaNorte = new Continente();
+		Continente Oceania = new Continente();
+		Continente Asia = new Continente();
+		
+		Territorio Brasil = new Territorio("Brasil");
+		Territorio ArgentinaUruguai = new Territorio("ArgentinaUruguai");
+		Territorio PeruBoliviaChile = new Territorio("PeruBoliviaChile");
+		
+		
+		
+		
 	}
 
 }
