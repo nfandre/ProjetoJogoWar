@@ -2,6 +2,9 @@ package br.edu.ifsp.spo.lg2a3.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.junit.jupiter.api.Test;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Continente;
@@ -12,8 +15,11 @@ class ContinenteTest {
 	
 	@Test
 	void verificarCriacaoContinente(){
+		ArrayList <Territorio> territorios = new ArrayList<Territorio>();
+		
 		Continente  c = new Continente();
 		
+		Continente.setTerritorios(territorios);
 		assertNotNull(c);
 	
 	}

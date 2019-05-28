@@ -1,6 +1,9 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
+import java.util.Collection;
 
+import br.edu.ifsp.spo.lg2a3.repositorio.ContinenteRepositorio;
+import br.edu.ifsp.spo.lg2a3.repositorio.JogadorRepositorio;
 
 public class aplicacaoTeste {
 
@@ -37,6 +40,12 @@ public class aplicacaoTeste {
 		Continente AmericaNorte = new Continente();
 		Continente Oceania = new Continente();
 		Continente Asia = new Continente();
+		//AdicionandoContinentes a uma lista
+		ContinenteRepositorio.Continentes.add(Africa);
+		ContinenteRepositorio.Continentes.add(Europa);
+		ContinenteRepositorio.Continentes.add(AmericaSul);
+		ContinenteRepositorio.Continentes.add(AmericaNorte);
+		ContinenteRepositorio.Continentes.add(Asia);
 		
 		//territorios da america do sul
 		Territorio Brasil = new Territorio("Brasil");
@@ -48,6 +57,7 @@ public class aplicacaoTeste {
 		AmericaSul.adicionarTerritoriosAoContinente(ArgentinaUruguai);
 		AmericaSul.adicionarTerritoriosAoContinente(PeruBoliviaChile);
 		AmericaSul.adicionarTerritoriosAoContinente(ColombiaVenezuela);
+
 		
 		//territorios da america do norte
 		Territorio Mexico = new Territorio("Mexico");
@@ -140,7 +150,28 @@ public class aplicacaoTeste {
 		Asia.adicionarTerritoriosAoContinente(Siberia);
 		Asia.adicionarTerritoriosAoContinente(vladivostok);
 		
-		
+		int qtdJogador = 6;
+		if (qtdJogador == 6) {
+			Jogador j1 = new Jogador();
+			Jogador j2 = new Jogador();
+			Jogador j3 = new Jogador();
+			Jogador j4 = new Jogador();
+			Jogador j5 = new Jogador();
+			Jogador j6 = new Jogador();
+			
+			JogadorRepositorio.getJogadores().add(j1);
+			JogadorRepositorio.getJogadores().add(j2);
+			JogadorRepositorio.getJogadores().add(j3);
+			JogadorRepositorio.getJogadores().add(j4);
+			JogadorRepositorio.getJogadores().add(j5);
+			JogadorRepositorio.getJogadores().add(j6);
+			
+			System.out.println(ContinenteRepositorio.Continentes);
+			System.out.println(Continente.Territorios.get(1).getNome());
+			
+			
+			
+		}
 	}
 
 }
