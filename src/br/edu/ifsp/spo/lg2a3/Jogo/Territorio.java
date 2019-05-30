@@ -13,6 +13,8 @@ public class Territorio {
 	
 	
 	
+	
+	
 	public Jogador getJogadorDono() {
 		return jogadorDono;
 	}

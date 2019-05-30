@@ -46,6 +46,7 @@ public class aplicacaoTeste {
 		ContinenteRepositorio.Continentes.add(Europa);
 		ContinenteRepositorio.Continentes.add(AmericaSul);
 		ContinenteRepositorio.Continentes.add(AmericaNorte);
+		ContinenteRepositorio.Continentes.add(Oceania);
 		ContinenteRepositorio.Continentes.add(Asia);
 		
 		//territorios da america do sul
@@ -170,14 +171,15 @@ public class aplicacaoTeste {
 	
 			jogadores.add(j1);
 			//Deixando jogadores em ordem Aleatorios para separar territorios
-			//Collections.shuffle(jogadores);
+			Collections.shuffle(jogadores);
 			
 			
 			JogadorRepositorio jr = new JogadorRepositorio(jogadores);
+			ContinenteRepositorio cr = new ContinenteRepositorio();
 			
-			
-			ContinenteRepositorio.Continentes.get(0).Territorios.get(i);
-			int j=0;
+			cr.separarTerritoriosJogadores(6, jr);
+			cr.exibirListaTerritoriosPorUsuario();
+			/*
 			for(Continente c: ContinenteRepositorio.Continentes) {
 				System.out.println(c.getNome() +c.Territorios.size());
 				for(Territorio t: c.Territorios) {
@@ -189,7 +191,7 @@ public class aplicacaoTeste {
 					i++;
 					System.out.println(t.toString()+j++);
 				}
-			}
+			}*/
 
 			
 		}
