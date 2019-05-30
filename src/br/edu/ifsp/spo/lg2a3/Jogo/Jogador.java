@@ -26,6 +26,10 @@ public class Jogador {
 	public void setTerritorios(Collection<Territorio> territorios) {
 		Territorios = territorios;
 	}
+	@Override
+	public String toString() {
+		return "Jogador [NomeUsuario=" + NomeUsuario + "]";
+	}
 
 	
 

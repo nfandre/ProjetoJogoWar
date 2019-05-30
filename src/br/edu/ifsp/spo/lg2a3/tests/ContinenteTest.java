@@ -3,7 +3,7 @@ package br.edu.ifsp.spo.lg2a3.tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
+
 
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,7 @@ class ContinenteTest {
 		
 		Continente  c = new Continente();
 		
-		Continente.setTerritorios(territorios);
+		c.setTerritorios(territorios);
 		assertNotNull(c);
 	
 	}

@@ -17,6 +17,7 @@ public class ContinenteRepositorio {
 
 	public static void setContinetes(ArrayList<Continente> continetes) {
 		Continentes = continetes;
+		
 	}
 
 }

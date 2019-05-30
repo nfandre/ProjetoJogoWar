@@ -1,24 +1,36 @@
 package br.edu.ifsp.spo.lg2a3.repositorio;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
 
 public class JogadorRepositorio {
 	
-	private static Collection<Jogador> jogadores = new ArrayList<Jogador>();
+	private  ArrayList<Jogador> Jogadores = new ArrayList<Jogador>();
+
+
+
+	public JogadorRepositorio(ArrayList<Jogador> jogadores) {
+		getJogadores().addAll(jogadores);
+	}
+	
+
+
+	
+	public void setJogadores(ArrayList<Jogador> jogadores) {
+		Jogadores = jogadores;
+	}
+	
+
+	public ArrayList<Jogador> getJogadores() {
+		return Jogadores;
+	}
+
 
 	
 	
 	
 	
-	public static Collection<Jogador> getJogadores() {
-		return jogadores;
-	}
 
-	public static void setJogadores(Collection<Jogador> jogadores) {
-		JogadorRepositorio.jogadores = jogadores;
-	}
 	
 	
 }

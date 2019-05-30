@@ -7,12 +7,15 @@ import java.util.Collection;
 public class Continente {
 	
 	//private static int quantidadeTerritorios;
-	public static ArrayList <Territorio> Territorios = new ArrayList<Territorio>();
+	public  ArrayList <Territorio> Territorios = new ArrayList<Territorio>();
+	private String Nome;
 
 	public Continente() {
 		
 	}
-	
+	public Continente(String nome) {
+		this.Nome =nome;
+	}
 	
 	
 	public void SeparaTerritorioQtdJogadores(int quantidadeJogadores, Collection <Jogador> jogadores) {
@@ -41,15 +44,30 @@ public class Continente {
 
 
 
-	public static ArrayList<Territorio> getTerritorios() {
+	public ArrayList<Territorio> getTerritorios() {
 		return Territorios;
 	}
 
 
 
-	public static void setTerritorios(ArrayList<Territorio> territorios) {
+	public void setTerritorios(ArrayList<Territorio> territorios) {
 		Territorios = territorios;
 	}
+	
+
+
+	public String getNome() {
+		return Nome;
+	}
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+	@Override
+	public String toString() {
+		return "Continente [Nome=" + Nome + "]";
+	}
+	
+	
 	
 	 
 }

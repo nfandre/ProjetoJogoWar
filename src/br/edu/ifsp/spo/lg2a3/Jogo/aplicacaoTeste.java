@@ -1,6 +1,7 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import br.edu.ifsp.spo.lg2a3.repositorio.ContinenteRepositorio;
 import br.edu.ifsp.spo.lg2a3.repositorio.JogadorRepositorio;
@@ -34,12 +35,12 @@ public class aplicacaoTeste {
 		
 		
 		
-		Continente Africa = new Continente();
-		Continente Europa = new Continente();
-		Continente AmericaSul = new Continente();
-		Continente AmericaNorte = new Continente();
-		Continente Oceania = new Continente();
-		Continente Asia = new Continente();
+		Continente Africa = new Continente("Africa");
+		Continente Europa = new Continente("Europa");
+		Continente AmericaSul = new Continente("AmericaSul");
+		Continente AmericaNorte = new Continente("AmericaNorte");
+		Continente Oceania = new Continente("Oceania ");
+		Continente Asia = new Continente("Asia");
 		//AdicionandoContinentes a uma lista
 		ContinenteRepositorio.Continentes.add(Africa);
 		ContinenteRepositorio.Continentes.add(Europa);
@@ -151,25 +152,45 @@ public class aplicacaoTeste {
 		Asia.adicionarTerritoriosAoContinente(vladivostok);
 		
 		int qtdJogador = 6;
+		int i=0;
 		if (qtdJogador == 6) {
-			Jogador j1 = new Jogador();
-			Jogador j2 = new Jogador();
-			Jogador j3 = new Jogador();
-			Jogador j4 = new Jogador();
-			Jogador j5 = new Jogador();
-			Jogador j6 = new Jogador();
+			Jogador j1 = new Jogador("A");
+			Jogador j2 = new Jogador("B");
+			Jogador j3 = new Jogador("C");
+			Jogador j4 = new Jogador("D");
+			Jogador j5 = new Jogador("E");
+			Jogador j6 = new Jogador("F");
+			ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+			jogadores.add(j1);
+			jogadores.add(j2);
+			jogadores.add(j3);
+			jogadores.add(j4);
+			jogadores.add(j5);
+			jogadores.add(j6);
+	
+			jogadores.add(j1);
+			//Deixando jogadores em ordem Aleatorios para separar territorios
+			//Collections.shuffle(jogadores);
 			
-			JogadorRepositorio.getJogadores().add(j1);
-			JogadorRepositorio.getJogadores().add(j2);
-			JogadorRepositorio.getJogadores().add(j3);
-			JogadorRepositorio.getJogadores().add(j4);
-			JogadorRepositorio.getJogadores().add(j5);
-			JogadorRepositorio.getJogadores().add(j6);
 			
-			System.out.println(ContinenteRepositorio.Continentes);
-			System.out.println(Continente.Territorios.get(1).getNome());
+			JogadorRepositorio jr = new JogadorRepositorio(jogadores);
 			
 			
+			ContinenteRepositorio.Continentes.get(0).Territorios.get(i);
+			int j=0;
+			for(Continente c: ContinenteRepositorio.Continentes) {
+				System.out.println(c.getNome() +c.Territorios.size());
+				for(Territorio t: c.Territorios) {
+						
+					if(i==6)
+						i=0;
+					
+					t.setJogadorDono(jr.getJogadores().get(i));
+					i++;
+					System.out.println(t.toString()+j++);
+				}
+			}
+
 			
 		}
 	}
