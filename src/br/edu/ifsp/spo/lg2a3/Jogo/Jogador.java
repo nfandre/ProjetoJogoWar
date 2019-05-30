@@ -1,11 +1,10 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class Jogador {
 	private String NomeUsuario;
-	private  Collection <Territorio> Territorios = new ArrayList<Territorio>();
+	private  ArrayList <Territorio> Territorios = new ArrayList<Territorio>();
 	
 	public Jogador() {
 		
@@ -20,7 +19,7 @@ public class Jogador {
 	public void setNomeUsuario(String nomeUsuario) {
 		NomeUsuario = nomeUsuario;
 	}
-	public Collection<Territorio> getTerritorios() {
+	public ArrayList<Territorio> getTerritorios() {
 		return Territorios;
 	}
 	public void adicionarTerritoriosJogador(Territorio t) {
