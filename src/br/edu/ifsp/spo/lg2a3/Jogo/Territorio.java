@@ -31,12 +31,6 @@ public class Territorio {
 		return Nome;
 	}
 
-	public void setNome(String nome) {
-		this.Nome = nome;
-	}
-
-
-
 	@Override
 	public String toString() {
 		return "Territorio [Nome=" + Nome + ", jogadorDono=" + jogadorDono + "]";

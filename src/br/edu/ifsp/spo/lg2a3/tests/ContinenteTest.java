@@ -15,12 +15,14 @@ class ContinenteTest {
 	
 	@Test
 	void verificarCriacaoContinente(){
+		String nomeContinente="AmericaSul";
 		ArrayList <Territorio> territorios = new ArrayList<Territorio>();
 		
-		Continente  c = new Continente();
+		Continente  c = new Continente(nomeContinente);
 		
 		c.setTerritorios(territorios);
 		assertNotNull(c);
+		assertEquals(nomeContinente, c.getNome());
 	
 	}
 	
@@ -34,6 +36,27 @@ class ContinenteTest {
 		assertNotNull(c.getTerritorios());
 		
 		
+	}
+	@Test
+	void verificarSetarNomeContinente() {
+		String nomeContinente="AmericaSul";
+		
+		Continente c = new Continente();
+		c.setNome(nomeContinente);
+		
+		assertNotNull(c);
+		assertEquals(nomeContinente, c.getNome());
+	}
+	
+	@Test
+	void verificarToString() {
+		String nomeContinente="AmericaSul";
+		String str ="Continente [Nome=AmericaSul]";
+		Continente c = new Continente();
+		c.setNome(nomeContinente);
+		
+		assertNotNull(c);
+		assertEquals(str, c.toString());
 	}
 
 }

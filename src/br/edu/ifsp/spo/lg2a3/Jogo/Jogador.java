@@ -11,7 +11,7 @@ public class Jogador {
 		
 	}
 	public Jogador(String nomeUsuario) {
-		NomeUsuario = nomeUsuario;
+		this.NomeUsuario = nomeUsuario;
 	}	
 	
 	public String getNomeUsuario() {
@@ -23,8 +23,8 @@ public class Jogador {
 	public Collection<Territorio> getTerritorios() {
 		return Territorios;
 	}
-	public void setTerritorios(Collection<Territorio> territorios) {
-		Territorios = territorios;
+	public void adicionarTerritoriosJogador(Territorio t) {
+		this.Territorios.add(t);
 	}
 	@Override
 	public String toString() {

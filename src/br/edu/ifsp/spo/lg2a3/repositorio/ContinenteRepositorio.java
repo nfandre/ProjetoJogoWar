@@ -29,7 +29,9 @@ public class ContinenteRepositorio {
 					i=0;
 				
 				t.setJogadorDono(jr.getJogadores().get(i));
+				jr.getJogadores().get(i).adicionarTerritoriosJogador(t);
 				i++;
+				
 
 			}
 		}
@@ -38,10 +40,7 @@ public class ContinenteRepositorio {
 		for(Continente c: ContinenteRepositorio.Continentes) {
 			System.out.println(c.getNome() +c.Territorios.size());
 			for(Territorio t: c.Territorios) {
-
-				
 				System.out.println(t.toString());
-
 			}
 		}
 	}

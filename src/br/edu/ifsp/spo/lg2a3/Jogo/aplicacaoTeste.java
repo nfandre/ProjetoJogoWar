@@ -153,7 +153,7 @@ public class aplicacaoTeste {
 		Asia.adicionarTerritoriosAoContinente(vladivostok);
 		
 		int qtdJogador = 6;
-		int i=0;
+
 		if (qtdJogador == 6) {
 			Jogador j1 = new Jogador("A");
 			Jogador j2 = new Jogador("B");
@@ -169,7 +169,6 @@ public class aplicacaoTeste {
 			jogadores.add(j5);
 			jogadores.add(j6);
 	
-			jogadores.add(j1);
 			//Deixando jogadores em ordem Aleatorios para separar territorios
 			Collections.shuffle(jogadores);
 			
@@ -177,9 +176,15 @@ public class aplicacaoTeste {
 			JogadorRepositorio jr = new JogadorRepositorio(jogadores);
 			ContinenteRepositorio cr = new ContinenteRepositorio();
 			
-			cr.separarTerritoriosJogadores(6, jr);
-			cr.exibirListaTerritoriosPorUsuario();
+			cr.separarTerritoriosJogadores(jogadores.size(), jr);
+			//cr.exibirListaTerritoriosPorUsuario();
+			
+			for(Jogador j:jogadores) {
+				System.out.println(j.getTerritorios());
+				System.out.println(j.getTerritorios().size());
+			}
 			/*
+			 * 		int i=0;
 			for(Continente c: ContinenteRepositorio.Continentes) {
 				System.out.println(c.getNome() +c.Territorios.size());
 				for(Territorio t: c.Territorios) {
