@@ -26,6 +26,8 @@ public class JogadorRepositorio {
 				exercitos.add(exercito);
 			}
 			
+			
+			
 			j.setExercitos(exercitos);
 			
 		}
