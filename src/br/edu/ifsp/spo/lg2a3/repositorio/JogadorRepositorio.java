@@ -9,39 +9,22 @@ public class JogadorRepositorio {
 	
 	private  ArrayList<Jogador> Jogadores = new ArrayList<Jogador>();
 
-
+	
 
 	public JogadorRepositorio(ArrayList<Jogador> jogadores) {
 		getJogadores().addAll(jogadores);
 	}
 	
 
-	public void colocarExercitosDeAcordoComTerritorios( ArrayList<Jogador> jogadores, TipoExercito tipo, String cor) {
+	public void colocarExercitosDeAcordoComTerritorios( ArrayList<Jogador> jogadores, ArrayList<TipoExercito> tipo, ArrayList<String> cor) {
+		int i=0;
 		for(Jogador j: jogadores) {
-			int qtdExercitoReceber = dividirExercitoNumeroTerritorio(j.getTerritorios().size());
-			int i=0;
-			ArrayList<Exercito> exercitos = new ArrayList<Exercito>();
-			for(i=0; i<qtdExercitoReceber; i++) {
-				Exercito exercito = new Exercito(10, tipo, cor );
-				exercitos.add(exercito);
-			}
-			
-			
-			
-			j.setExercitos(exercitos);
-			
+
+			j.colocarExercitosDeAcordoComTerritorios(j, tipo.get(i), cor.get(i));
+			i++;
 		}
 	}
-	public int dividirExercitoNumeroTerritorio(int qtdTerritorio) {
-		int retorno;
-		if(qtdTerritorio%2 ==0) {
-			retorno =  qtdTerritorio/2;
-		}else {
-			retorno = qtdTerritorio/2 + 1;
-		}
-		
-		return retorno;
-	}
+
 	
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		Jogadores = jogadores;

@@ -33,7 +33,7 @@ class TerritorioTest {
 	}
 	
 	@Test
-	void verificarToString() {
+	void verificar_to_string() {
 		String nomeTerritorio = "Brasil";
 		
 		String str = "Territorio [Nome=Brasil, jogadorDono=Jogador [NomeUsuario=Andre]]";

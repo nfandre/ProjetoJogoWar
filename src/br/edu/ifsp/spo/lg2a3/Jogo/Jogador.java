@@ -21,6 +21,10 @@ public class Jogador {
 	public void setExercitos(ArrayList<Exercito> exercitos) {
 		Exercitos = exercitos;
 	}
+	
+	public ArrayList<Exercito> getExercitos() {
+		return Exercitos;
+	}
 	public void setNomeUsuario(String nomeUsuario) {
 		NomeUsuario = nomeUsuario;
 	}
@@ -31,6 +35,27 @@ public class Jogador {
 	public void adicionarTerritoriosJogador(Territorio t) {
 		this.Territorios.add(t);
 	}
+	public int dividirExercitoNumeroTerritorio(int qtdTerritorio) {
+		int retorno;
+		if(qtdTerritorio%2 ==0) {
+			retorno =  qtdTerritorio/2;
+		}else {
+			retorno = qtdTerritorio/2 + 1;
+		}
+		
+		return retorno;
+	}
+	public void colocarExercitosDeAcordoComTerritorios( Jogador jogador, TipoExercito tipo, String cor) {
+			int qtdExercitoReceber = jogador.dividirExercitoNumeroTerritorio((jogador.getTerritorios().size()));
+			int i=0;
+			ArrayList<Exercito> exercitos = new ArrayList<Exercito>();
+			for(i=0; i<qtdExercitoReceber; i++) {
+				Exercito exercito = new Exercito(10, tipo, cor );
+				exercitos.add(exercito);
+			}	
+			jogador.setExercitos(exercitos);
+	}
+	
 	@Override
 	public String toString() {
 		return "Jogador [NomeUsuario=" + NomeUsuario + "]";
