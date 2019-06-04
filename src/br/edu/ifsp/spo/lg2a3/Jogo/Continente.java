@@ -17,6 +17,7 @@ public class Continente {
 	}	
 	
 	public void adicionarTerritoriosAoContinente(Territorio territorio) {
+		territorio.setContinente(this);
 		Territorios.add(territorio);
 	}
 

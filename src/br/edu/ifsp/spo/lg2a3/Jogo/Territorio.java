@@ -4,7 +4,8 @@ package br.edu.ifsp.spo.lg2a3.Jogo;
 public class Territorio {
 	
 	private String Nome;
-	Jogador jogadorDono;
+	private Jogador jogadorDono;
+	private Continente Continente;
 
 	
 	public Territorio(String nome) {
@@ -19,7 +20,20 @@ public class Territorio {
 		this.jogadorDono = jogadorDono;
 	}
 
+	public boolean verificarFronteiraOutroTerritorio(Territorio territorio) {
+		boolean retorno= false;
+		
+		return retorno;
+	}
 
+	
+	public Continente getContinente() {
+		return Continente;
+	}
+
+	public void setContinente(Continente continente) {
+		Continente = continente;
+	}
 
 	public String getNome() {
 		return Nome;
