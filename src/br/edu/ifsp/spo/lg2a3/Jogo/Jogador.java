@@ -50,11 +50,23 @@ public class Jogador {
 			int i=0;
 			ArrayList<Exercito> exercitos = new ArrayList<Exercito>();
 			for(i=0; i<qtdExercitoReceber; i++) {
-				Exercito exercito = new Exercito(10, tipo, cor );
+				Exercito exercito = new Exercito(10, tipo, cor);
 				exercitos.add(exercito);
 			}	
 			jogador.setExercitos(exercitos);
 	}
+	
+
+	public Jogador atacar(Exercito exercitoAtaque, Exercito ExercitoDefesa, Jogador jogadorAtacar, Jogador jogadorReceberAtaque) {
+		
+		//verificar fronteiraa
+		//if(exer)
+		exercitoAtaque.getTerritorioAlocado();
+		
+		return jogadorAtacar;
+		
+	}
+	
 	
 	@Override
 	public String toString() {

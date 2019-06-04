@@ -10,16 +10,10 @@ public class Territorio {
 	public Territorio(String nome) {
 		Nome =nome;
 	}
-	
-	
-	
-	
-	
+		
 	public Jogador getJogadorDono() {
 		return jogadorDono;
 	}
-
-
 
 	public void setJogadorDono(Jogador jogadorDono) {
 		this.jogadorDono = jogadorDono;

@@ -1,8 +1,8 @@
 package br.edu.ifsp.spo.lg2a3.repositorio;
 import java.util.ArrayList;
 
-import br.edu.ifsp.spo.lg2a3.Jogo.Exercito;
 import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
+import br.edu.ifsp.spo.lg2a3.Jogo.Territorio;
 import br.edu.ifsp.spo.lg2a3.Jogo.TipoExercito;
 
 public class JogadorRepositorio {
@@ -25,6 +25,19 @@ public class JogadorRepositorio {
 		}
 	}
 
+	
+//	public Jogador buscarJogadorPorTerritorio(ArrayList <Territorio> territorios) {
+//		
+//		
+//		for(Jogador j : this.getJogadores()) {
+//			j.getTerritorios()
+//		}
+//		return null;
+//		return null;
+//		
+//	}
+	
+	
 	
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		Jogadores = jogadores;

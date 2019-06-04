@@ -4,6 +4,7 @@ public class Exercito {
 	
 	private int QuantidadeExercito;
 	private String Cor;
+	private Territorio TerritorioAlocado;
 	
 	public Exercito(int quantidadeExercito, TipoExercito tipoexercito, String Cor){
 		
@@ -12,7 +13,17 @@ public class Exercito {
 	
 	
 	
-	
+	public Territorio getTerritorioAlocado() {
+		return TerritorioAlocado;
+	}
+
+
+
+	public void setTerritorioAlocado(Territorio territorioAlocado) {
+		TerritorioAlocado = territorioAlocado;
+	}
+
+
 	public String getCor() {
 		return Cor;
 	}

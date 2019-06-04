@@ -36,13 +36,15 @@ public class ContinenteRepositorio {
 			}
 		}
 	}
-	public void exibirListaTerritoriosPorUsuario(){
-		for(Continente c: ContinenteRepositorio.Continentes) {
-			System.out.println(c.getNome() +c.Territorios.size());
-			for(Territorio t: c.Territorios) {
-				System.out.println(t.toString());
-			}
-		}
-	}
+	//ExibirLista
+	
+//	public void exibirListaTerritoriosPorUsuario(){
+//		for(Continente c: ContinenteRepositorio.Continentes) {
+//			System.out.println(c.getNome() +c.Territorios.size());
+//			for(Territorio t: c.Territorios) {
+//				System.out.println(t.toString());
+//			}
+//		}
+//	}
 
 }
