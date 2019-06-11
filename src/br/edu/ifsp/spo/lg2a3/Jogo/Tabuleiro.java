@@ -1,5 +1,7 @@
 package br.edu.ifsp.spo.lg2a3.Jogo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 
 import br.edu.ifsp.spo.lg2a3.repositorio.ContinenteRepositorio;
@@ -13,6 +15,21 @@ public class Tabuleiro {
 		setUp();
 			
 		
+	}
+	public void pegarContinentesTxt() {
+		try {
+			String nomeContinente;
+			BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/Continentes.txt"));
+			while((nomeContinente = arquivo.readLine())!=null) {
+				Continente continenteX = new Continente(nomeContinente);
+				this.continentes.add(continenteX);				
+			}
+			arquivo.close();
+			
+		}catch(Exception  ex) {
+			System.out.println(ex.getMessage());
+		}
+
 	}
 	
 	public void setUp() {
