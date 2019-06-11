@@ -58,7 +58,7 @@ class TabuleiroTest {
 	}
 	
 	@Test
-	void adicionar_territorio_continente() {
+	void verificar_adicionar_territorio_continente() {
 		Tabuleiro a = new Tabuleiro();
 		a.pegarContinentesTxt();
 		a.AdicionarTerritoriosAosContinentes();
@@ -68,6 +68,29 @@ class TabuleiroTest {
 			ArrayList<Territorio> territorios = a.pegarTerritoriosText(c);
 			for(Territorio t: c.getTerritorios()) {
 				assertEquals(territorios.get(i).getNome(), t.getNome());
+				i++;
+			}
+		}	
+	}
+	
+	@Test
+	void verificar_separacao_de_fronteiras() {
+		Tabuleiro a = new Tabuleiro();
+		a.pegarContinentesTxt();
+		a.AdicionarTerritoriosAosContinentes();
+		int i=0;
+		int j=0;
+		for(Continente c: a.getContinentes()) {
+			i=0;
+			ArrayList<Territorio> territorios = a.pegarTerritoriosText(c);
+			a.AdicionarFronteirasAosTerritorios();
+			for(Territorio t: c.getTerritorios()) {		
+				j=0;	
+				for(Territorio ts: territorios.get(i).getFronteiras()) {
+					assertEquals(territorios.get(i).getFronteiras().get(j).getNome(), ts.getNome());
+					j++;
+				}
+
 				i++;
 			}
 		}	

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
+import br.edu.ifsp.spo.lg2a3.repositorio.TerritorioRepositorio;
+
 
 public class Tabuleiro {
 	
@@ -54,8 +56,67 @@ public class Tabuleiro {
 			c.setTerritorios(pegarTerritoriosText(c));		
 		}			
 	}
+	public ArrayList<Territorio> adicionarFronteirasTerritorios(Territorio ts) {
+		ArrayList<Territorio> territorios = new ArrayList<Territorio>();
+		try {
+			String nomeFronteira;
+			String arquivoConsulta ="Fronteiras"+ts.getNome()+".txt";
+			System.out.println(arquivoConsulta);
+			BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/"+arquivoConsulta));
+			
+			while((nomeFronteira = arquivo.readLine())!=null) {
+				Territorio t = new Territorio(nomeFronteira);	
+				territorios.add(t);
+			}
+			arquivo.close();	
+
+		}catch(Exception  ex) {
+			System.out.println(ex.getMessage());
+		}
+		return territorios;
+	}
 	
+	public void AdicionarFronteirasAosTerritorios() {
+		TerritorioRepositorio tr = new TerritorioRepositorio();
+		for(Continente c: this.getContinentes()) {
+			for(Territorio t: c.getTerritorios()) {
+				t.setFronteiras(
+						adicionarFronteirasTerritorios(t)
+						);
+			}
+		}
+	}
 	
+	public boolean verificar_territorio_tem_fronteira(Territorio t) {
+		boolean result = false;
+		
+		switch (t.getNome()) {
+		case "AfricaSul":
+			result = true;
+			break;
+		case "Alaska":
+			result = true;
+			break;
+		case "Alemanha":
+			result = true;
+			break;
+		case "Australia":
+			result = true;
+			break;
+		case "Borneo":
+			result = true;
+			break;
+		case "Brasil":
+			result = true;
+			break;
+
+		default:
+			break;
+		}
+		return result;
+		
+
+	}
 	public void setUp() {
 
 		pegarContinentesTxt();
