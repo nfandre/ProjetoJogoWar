@@ -67,7 +67,10 @@ public class aplicacaoTeste {
 			
 			Tabuleiro t = new Tabuleiro();
 			t.pegarContinentesTxt();
-			System.out.println(t.getContinentes().get(5).getNome());
+			for(Continente  s: t.getContinentes()) {
+				System.out.println(s.getNome());
+			}
+
 		}
 	}
 

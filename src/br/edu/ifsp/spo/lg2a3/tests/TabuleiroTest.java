@@ -4,11 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Continente;
 import br.edu.ifsp.spo.lg2a3.Jogo.Tabuleiro;
+import br.edu.ifsp.spo.lg2a3.Jogo.Territorio;
 
 class TabuleiroTest {
 
@@ -17,25 +19,59 @@ class TabuleiroTest {
 		Tabuleiro a = new Tabuleiro();
 		
 		a.pegarContinentesTxt();
-
 		try {
 			String nomeContinente;
 			BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/Continentes.txt"));
 			assertNotNull(arquivo);
 			int i=0;
 			while((nomeContinente = arquivo.readLine())!=null) {
-				System.out.println(i);
 				assertEquals(nomeContinente, a.getContinentes().get(i).getNome());
-				System.out.println( a.getContinentes().get(i).getNome());
 				i++;	
 
 			}
 			
 			arquivo.close();
-			
 		}catch(Exception  ex) {
 			System.out.println(ex.getMessage());
 		}	
 	}
+	@Test
+	void verificar_pegar_territorios() {
+		Tabuleiro a = new Tabuleiro();
+		a.pegarContinentesTxt();
+		
+		ArrayList<Territorio> territorios = a.pegarTerritoriosText(a.getContinentes().get(0));
+		try {
+			String nomeTerritorio;
+			String arquivoConsulta ="Territorios"+a.getContinentes().get(0).getNome()+".txt";
+			int i=0;
+			BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/"+arquivoConsulta));			
+			while((nomeTerritorio = arquivo.readLine())!=null) {
+				assertEquals(nomeTerritorio, territorios.get(i).getNome());
+				i++;			
+			}
+
+			arquivo.close();	
+		}catch(Exception  ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+	@Test
+	void adicionar_territorio_continente() {
+		Tabuleiro a = new Tabuleiro();
+		a.pegarContinentesTxt();
+		a.AdicionarTerritoriosAosContinentes();
+		int i=0;
+		for(Continente c: a.getContinentes()) {
+			i=0;
+			ArrayList<Territorio> territorios = a.pegarTerritoriosText(c);
+			for(Territorio t: c.getTerritorios()) {
+				assertEquals(territorios.get(i).getNome(), t.getNome());
+				i++;
+			}
+		}	
+	}
+	
 
 }
