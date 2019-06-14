@@ -168,6 +168,7 @@ public class Tabuleiro {
 
 		pegarContinentesTxt();
 		AdicionarTerritoriosAosContinentes();
+		AdicionarFronteirasAosTerritorios();
 		
 		
 		

@@ -23,6 +23,12 @@ public class Territorio {
 
 	public boolean verificarFronteiraOutroTerritorio(Territorio territorio) {
 		boolean retorno= false;
+		for(Territorio fronteira: territorio.getFronteiras()) {
+			if(this.equals(fronteira)) {
+				retorno = true;
+				break;
+			}
+		}
 		
 		return retorno;
 	}
@@ -46,11 +52,26 @@ public class Territorio {
 	public String getNome() {
 		return Nome;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Territorio [Nome=" + Nome + ", jogadorDono=" + jogadorDono + "]";
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		boolean resultado = false;
+		
+		if(obj.getClass() == this.getClass()) {
+			Territorio outro = (Territorio)obj;
+			
+			resultado = this.getNome().equals(outro.getNome());
+			
+		}
+		return resultado;
+	}
 	
 	 
+	
 }

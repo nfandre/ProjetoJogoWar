@@ -77,7 +77,6 @@ class TabuleiroTest {
 	void verificar_separacao_de_fronteiras() {
 		Tabuleiro a = new Tabuleiro();
 		int i=0;
-		int j=0;
 		a.AdicionarFronteirasAosTerritorios();
 		for(Continente c: a.getContinentes()) {
 
