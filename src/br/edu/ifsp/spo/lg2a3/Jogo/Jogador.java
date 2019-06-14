@@ -55,13 +55,36 @@ public class Jogador {
 			}	
 			jogador.setExercitos(exercitos);
 	}
-	
+	public void deslocar(Territorio territorioTroca, Exercito exercitoTroca) {
+		boolean flag =false;
+		for(Exercito e: this.Exercitos) {
+			if(e.getTipoExercito() == TipoExercito.ocupacao) {
+				flag =true;
+				break;
+			}
+		}
+		if(flag ==true) {
+			exercitoTroca.setTerritorioAlocado(territorioTroca);
+		}else {
+			System.out.println("não é possivel descolar");
+		}
+	}
 
-	public Jogador atacar(Exercito exercitoAtaque, Exercito ExercitoDefesa, Jogador jogadorAtacar, Jogador jogadorReceberAtaque) {
+	public Jogador atacar(Exercito exercitoAtaque, Exercito exercitoDefesa, Jogador jogadorAtacar, Jogador jogadorReceberAtaque) {
 		
 		//verificar fronteiraa
-		//if(exer)
-		exercitoAtaque.getTerritorioAlocado();
+		if(exercitoAtaque.getTerritorioAlocado()
+				.verificarFronteiraOutroTerritorio
+				(exercitoDefesa.getTerritorioAlocado()) == true) {
+			
+			//verifica se o exercito de ataque é tem mais exercitos
+			if(exercitoAtaque.getQuantidadeExercito()> exercitoDefesa.getQuantidadeExercito()) {
+				
+			}
+			
+		}else {
+			
+		}
 		
 		return jogadorAtacar;
 		
