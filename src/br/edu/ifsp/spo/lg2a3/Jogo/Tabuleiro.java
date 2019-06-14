@@ -59,16 +59,19 @@ public class Tabuleiro {
 	public ArrayList<Territorio> adicionarFronteirasTerritorios(Territorio ts) {
 		ArrayList<Territorio> territorios = new ArrayList<Territorio>();
 		try {
-			String nomeFronteira;
-			String arquivoConsulta ="Fronteiras"+ts.getNome()+".txt";
-			System.out.println(arquivoConsulta);
-			BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/"+arquivoConsulta));
-			
-			while((nomeFronteira = arquivo.readLine())!=null) {
-				Territorio t = new Territorio(nomeFronteira);	
-				territorios.add(t);
+			//verificar se territorio tem fronteira
+			if(this.verificar_territorio_tem_fronteira(ts) == true) {
+				String nomeFronteira;
+				String arquivoConsulta ="Fronteiras"+ts.getNome()+".txt";
+				//System.out.println(arquivoConsulta);
+				BufferedReader arquivo = new BufferedReader(new FileReader("src/br/edu/ifsp/spo/lg2a3/arquivos/"+arquivoConsulta));
+				
+				while((nomeFronteira = arquivo.readLine())!=null) {
+					Territorio t = new Territorio(nomeFronteira);	
+					territorios.add(t);
+				}
+				arquivo.close();	
 			}
-			arquivo.close();	
 
 		}catch(Exception  ex) {
 			System.out.println(ex.getMessage());
@@ -109,7 +112,54 @@ public class Tabuleiro {
 		case "Brasil":
 			result = true;
 			break;
-
+		case "China":
+			result = true;
+			break;
+		case "Egito":
+			result = true;
+			break;
+		case "EspanhaPortugalFrancaItalia":
+			result = true;
+			break;
+		case "Groelandia":
+			result = true;
+			break;
+		case "India":
+			result = true;
+			break;
+		case "Inglaterra":
+			result = true;
+			break;
+		case "Islandia":
+			result = true;
+			break;
+		case "Japao":
+			result = true;
+			break;
+		case "JugoslaviaPolonia":
+			result = true;
+			break;
+		case "Madagascar":
+			result = true;
+			break;
+		case "NigeriaArgela":
+			result = true;
+			break;
+		case "NovaGuine":
+			result = true;
+			break;
+		case "Sumatra":
+			result = true;
+			break;
+		case "Sudao":
+			result = true;
+			break;
+		case "Vietna":
+			result = true;
+			break;
+		case "Vladivostok":
+			result = true;
+			break;
 		default:
 			break;
 		}
