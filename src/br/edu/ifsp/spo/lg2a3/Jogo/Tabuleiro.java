@@ -178,13 +178,15 @@ public class Tabuleiro {
 //		Continente Oceania = new Continente("Oceania ");
 //		Continente Asia = new Continente("Asia");
 //		
-//		//AdicionandoContinentes a uma lista no tabuleiro
+//		//AdicionandoContinentes a uma lista no tabuleirosdfasdfsaf
 //		this.continentes.add(Africa);
 //		this.continentes.add(Europa);
 //		this.continentes.add(AmericaSul);
 //		this.continentes.add(AmericaNorte);
 //		this.continentes.add(Oceania);
 //		this.continentes.add(Asia);
+		
+		
 //		
 //		//territorios da america do sul
 //		Territorio Brasil = new Territorio("Brasil");
