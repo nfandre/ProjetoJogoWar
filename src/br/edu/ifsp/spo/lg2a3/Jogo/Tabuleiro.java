@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-import br.edu.ifsp.spo.lg2a3.repositorio.TerritorioRepositorio;
-
 
 public class Tabuleiro {
 	
@@ -80,7 +78,6 @@ public class Tabuleiro {
 	}
 	
 	public void AdicionarFronteirasAosTerritorios() {
-		TerritorioRepositorio tr = new TerritorioRepositorio();
 		for(Continente c: this.getContinentes()) {
 			for(Territorio t: c.getTerritorios()) {
 				t.setFronteiras(

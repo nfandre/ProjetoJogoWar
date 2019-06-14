@@ -2,7 +2,6 @@ package br.edu.ifsp.spo.lg2a3.repositorio;
 import java.util.ArrayList;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
-import br.edu.ifsp.spo.lg2a3.Jogo.Territorio;
 import br.edu.ifsp.spo.lg2a3.Jogo.TipoExercito;
 
 public class JogadorRepositorio {

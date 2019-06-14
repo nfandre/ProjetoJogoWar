@@ -76,23 +76,20 @@ class TabuleiroTest {
 	@Test
 	void verificar_separacao_de_fronteiras() {
 		Tabuleiro a = new Tabuleiro();
-		a.pegarContinentesTxt();
-		a.AdicionarTerritoriosAosContinentes();
 		int i=0;
 		int j=0;
+		a.AdicionarFronteirasAosTerritorios();
 		for(Continente c: a.getContinentes()) {
-			i=0;
-			ArrayList<Territorio> territorios = a.pegarTerritoriosText(c);
-			a.AdicionarFronteirasAosTerritorios();
-			for(Territorio t: c.getTerritorios()) {		
-				j=0;	
-				for(Territorio ts: territorios.get(i).getFronteiras()) {
-					assertEquals(territorios.get(i).getFronteiras().get(j).getNome(), ts.getNome());
-					j++;
-				}
 
-				i++;
+			for(Territorio t: c.getTerritorios()) {		
+				i=0;	
+				ArrayList<Territorio> territoriosFronteiras = a.adicionarFronteirasTerritorios(t);
+				for(Territorio ts: t.getFronteiras()) {
+					assertEquals(territoriosFronteiras.get(i).getNome(), ts.getNome());
+					i++;
+				}
 			}
+
 		}	
 	}
 	
