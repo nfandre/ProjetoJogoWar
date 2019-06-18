@@ -86,7 +86,7 @@ class JogadorRepositorioTest {
 		 
 		 tipos.add(TipoExercito.ataque);
 		 tipos.add(TipoExercito.defesa);
-		 tipos.add(TipoExercito.neutro);
+		 tipos.add(TipoExercito.ocupacao);
 		 
 		 RepositorioTest.colocarExercitosDeAcordoComTerritorios( RepositorioTest.getJogadores(), tipos, cores);
 		 

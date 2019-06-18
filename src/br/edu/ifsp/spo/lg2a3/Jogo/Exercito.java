@@ -2,14 +2,14 @@ package br.edu.ifsp.spo.lg2a3.Jogo;
 
 public class Exercito {
 	
-	private int QuantidadeExercito;
+	//private int QuantidadeExercito;
 	private String Cor;
 	private Territorio TerritorioAlocado;
 	private TipoExercito TipoExercito;
 	
-	public Exercito(int quantidadeExercito, TipoExercito tipoexercito, String Cor){
+	public Exercito(TipoExercito tipoexercito, String Cor){
 		
-		QuantidadeExercito = quantidadeExercito;
+		//QuantidadeExercito = quantidadeExercito;
 		TipoExercito = tipoexercito;
 	}
 	
@@ -40,10 +40,4 @@ public class Exercito {
 		Cor = cor;
 	}
 
-	public int getQuantidadeExercito() {
-		return QuantidadeExercito;
-	}
-	public void setQuantidadeExercito(int quantidadeExercito) {
-		QuantidadeExercito = quantidadeExercito;
-	}
 }
