@@ -2,7 +2,6 @@ package br.edu.ifsp.spo.lg2a3.repositorio;
 import java.util.ArrayList;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
-import br.edu.ifsp.spo.lg2a3.Jogo.TipoExercito;
 
 public class JogadorRepositorio {
 	
@@ -15,16 +14,14 @@ public class JogadorRepositorio {
 	}
 	
 
-	public void colocarExercitosDeAcordoComTerritorios( ArrayList<Jogador> jogadores, ArrayList<TipoExercito> tipo, ArrayList<String> cor) {
+	public void colocarExercitosDeAcordoComTerritorios( ArrayList<Jogador> jogadores, ArrayList<String> cor) {
 		int i=0;
 		for(Jogador j: jogadores) {
 
-			j.colocarExercitosDeAcordoComTerritorios(j, tipo.get(i), cor.get(i));
+			j.colocarExercitosDeAcordoComTerritorios(j, cor.get(i));
 			i++;
 		}
 	}
-
-	
 //	public Jogador buscarJogadorPorTerritorio(ArrayList <Territorio> territorios) {
 //		
 //		

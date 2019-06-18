@@ -55,29 +55,19 @@ public class Jogador {
 		
 		return retorno;
 	}
-	public void colocarExercitosDeAcordoComTerritorios( Jogador jogador, TipoExercito tipo, String cor) {
+	public void colocarExercitosDeAcordoComTerritorios( Jogador jogador, String cor) {
 			int qtdExercitoReceber = jogador.dividirExercitoNumeroTerritorio((jogador.getTerritorios().size()));
 			int i=0;
 			ArrayList<Exercito> exercitos = new ArrayList<Exercito>();
 			for(i=0; i<qtdExercitoReceber; i++) {
-				Exercito exercito = new Exercito(tipo, cor);
+				Exercito exercito = new Exercito(cor);
 				exercitos.add(exercito);
 			}	
 			jogador.setExercitos(exercitos);
 	}
 	public void deslocar(Territorio territorioTroca, Exercito exercitoTroca) {
-		boolean flag =false;
-		for(Exercito e: this.Exercitos) {
-			if(e.getTipoExercito() == TipoExercito.ocupacao) {
-				flag =true;
-				break;
-			}
-		}
-		if(flag ==true) {
 			exercitoTroca.setTerritorioAlocado(territorioTroca);
-		}else {
-			System.out.println("não é possivel descolar");
-		}
+
 	}
 	public int realizarRolagemDado() {
 		Dado d = new Dado(6);
@@ -85,17 +75,30 @@ public class Jogador {
 	}
 
 	public Jogador atacar(Exercito exercitoAtaque, Exercito exercitoDefesa, Jogador jogadorAtacar, Jogador jogadorDefesa) {
-		
+		Jogador jogadorRetorno = null;
 		//verificar fronteiraa
 		if(exercitoAtaque.getTerritorioAlocado()
 				.verificarFronteiraOutroTerritorio
 				(exercitoDefesa.getTerritorioAlocado()) == true) {
 			
-			if(jogadorAtacar.Exercitos.contains(exercitoAtaque.getTipoExercito().ocupacao)) {
+			//verificar se é possivel atacar
+			if(this.verificarPossibilidadeAtaque() == true) {
 				
-				if(jogadorAtacar.getRolagemDado() > jogadorDefesa.getRolagemDado()) {
-				//	jogadorDefesa.getExercitos().remove(index)
-				}
+				//ver quem ganhou
+				int qtdExercito = 0;
+				if(this.getRolagemDado() > jogadorDefesa.getRolagemDado()) {
+					qtdExercito = jogadorDefesa.getExercitos().size();
+					jogadorDefesa.getExercitos().remove(qtdExercito-1);
+					jogadorRetorno = this;
+				}else
+					if(this.getRolagemDado() < jogadorDefesa.getRolagemDado()) {
+						qtdExercito	= this.getExercitos().size();
+						this.getExercitos().remove(qtdExercito-1);
+						jogadorRetorno = jogadorDefesa;
+					}else {
+						this.getExercitos().remove(qtdExercito-1);
+						jogadorRetorno = jogadorDefesa;
+					}
 			}else {
 				System.out.println("é necessário ter um exercito de ocupação");
 			}
@@ -106,11 +109,22 @@ public class Jogador {
 			System.out.println("território não possui fronteira");
 		}
 		
-		return jogadorAtacar;
+		return jogadorRetorno;
 		
 	}
 	public void RemoverExercitoDaLista(TipoExercito tipoExercito) {
 		
+		
+	}
+	public boolean verificarPossibilidadeAtaque() {
+		boolean retorno = false;
+		if(this.getExercitos().size() ==1 ) {
+			retorno = false;
+		}else {
+			retorno = true;
+		}
+		return retorno;
+			
 		
 	}
 	

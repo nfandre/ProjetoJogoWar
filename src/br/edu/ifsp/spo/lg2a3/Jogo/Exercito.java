@@ -5,26 +5,15 @@ public class Exercito {
 	//private int QuantidadeExercito;
 	private String Cor;
 	private Territorio TerritorioAlocado;
-	private TipoExercito TipoExercito;
 	
-	public Exercito(TipoExercito tipoexercito, String Cor){
+	public Exercito( String Cor){
 		
 		//QuantidadeExercito = quantidadeExercito;
-		TipoExercito = tipoexercito;
+		//TipoExercito = tipoexercito;
 	}
 	
 	public Territorio getTerritorioAlocado() {
 		return TerritorioAlocado;
-	}
-
-	
-
-	public TipoExercito getTipoExercito() {
-		return TipoExercito;
-	}
-
-	public void setTipoExercito(TipoExercito tipoExercito) {
-		TipoExercito = tipoExercito;
 	}
 
 	public void setTerritorioAlocado(Territorio territorioAlocado) {

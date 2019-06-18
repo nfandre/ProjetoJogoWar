@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
 import br.edu.ifsp.spo.lg2a3.Jogo.Territorio;
-import br.edu.ifsp.spo.lg2a3.Jogo.TipoExercito;
 
 class JogadorTest {
 	@Test
@@ -75,8 +74,8 @@ class JogadorTest {
 		j2.adicionarTerritoriosJogador(Suecia);
 		j2.adicionarTerritoriosJogador(Suecia);
 		
-		j1.colocarExercitosDeAcordoComTerritorios(j1, TipoExercito.ataque, "rosa");
-		j2.colocarExercitosDeAcordoComTerritorios(j2, TipoExercito.ataque, "Azul");
+		j1.colocarExercitosDeAcordoComTerritorios(j1, "rosa");
+		j2.colocarExercitosDeAcordoComTerritorios(j2, "Azul");
 		
 		assertEquals(3, j1.getExercitos().size());
 		assertEquals(4, j2.getExercitos().size());

@@ -88,7 +88,7 @@ class JogadorRepositorioTest {
 		 tipos.add(TipoExercito.defesa);
 		 tipos.add(TipoExercito.ocupacao);
 		 
-		 RepositorioTest.colocarExercitosDeAcordoComTerritorios( RepositorioTest.getJogadores(), tipos, cores);
+		 RepositorioTest.colocarExercitosDeAcordoComTerritorios( RepositorioTest.getJogadores(), cores);
 		 
 		 for(Jogador j: RepositorioTest.getJogadores()) {
 			 int qtdExercitoExperada = j.dividirExercitoNumeroTerritorio(j.getTerritorios().size());
