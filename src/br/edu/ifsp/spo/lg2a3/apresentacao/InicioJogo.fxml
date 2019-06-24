@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.spo.lg2a3.controllerApresentacao.InicioJogarController">
    <children>
       <ImageView fitHeight="515.0" fitWidth="838.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Imagens/fundo-de-textura-de-parede-lousa-azul_28629-898.jpg" />
          </image>
       </ImageView>
-      <Button id="btnJogar" blendMode="COLOR_BURN" layoutX="332.0" layoutY="314.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="108.0" text="Jogar" textFill="#033c05">
+      <Button id="btnJogar" fx:id="btnJogar" layoutX="332.0" layoutY="314.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="108.0" text="Jogar">
          <font>
             <Font size="23.0" />
          </font>
