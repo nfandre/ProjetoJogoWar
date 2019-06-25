@@ -6,10 +6,11 @@ public class Exercito {
 	private String Cor;
 	private Territorio TerritorioAlocado;
 	
-	public Exercito( String Cor){
+	public Exercito( String cor){
 		
 		//QuantidadeExercito = quantidadeExercito;
 		//TipoExercito = tipoexercito;
+		this.Cor = cor;
 	}
 	
 	public Territorio getTerritorioAlocado() {

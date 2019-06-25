@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.spo.lg2a3.controllerApresentacao.InicioJogarController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.ifsp.spo.lg2a3.controllerApresentacao.SelecaoJogadoresController">
    <children>
       <GridPane alignment="CENTER" layoutX="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="551.0" prefWidth="802.0">
         <columnConstraints>
@@ -19,7 +19,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="btn2Jogadores" mnemonicParsing="false" text="2 jogadores" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <Button id="btn2Jogadores" fx:id="btn2Jogadores" mnemonicParsing="false" text="2 jogadores" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <font>
                   <Font size="23.0" />
                </font>

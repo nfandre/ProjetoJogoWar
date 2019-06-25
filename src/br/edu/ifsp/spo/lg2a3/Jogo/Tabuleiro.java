@@ -3,6 +3,7 @@ package br.edu.ifsp.spo.lg2a3.Jogo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import br.edu.ifsp.spo.lg2a3.repositorio.JogadorRepositorio;
 
 
 public class Tabuleiro {
@@ -163,6 +164,31 @@ public class Tabuleiro {
 		return result;
 		
 
+	}
+	
+	public void separarTerritoriosJogadores(int quantidadeJogadores, JogadorRepositorio jr) {
+		int i=0;
+		for(Continente c: getContinentes()) {
+			for(Territorio t: c.Territorios) {
+				//inicializar variavel para comecar a percorrer a lista de jogadores	
+				if(i==quantidadeJogadores)
+					i=0;
+				
+				t.setJogadorDono(jr.getJogadores().get(i));
+				jr.getJogadores().get(i).adicionarTerritoriosJogador(t);
+				i++;
+				
+
+			}
+		}
+	}
+	public void exibirListaTerritoriosPorUsuario(){
+		for(Continente c: getContinentes()) {
+			System.out.println(c.getNome() +" - "+c.Territorios.size() + " territorios:");
+			for(Territorio t: c.Territorios) {
+				System.out.println(t.toString());
+			}
+		}
 	}
 	public void setUp() {
 

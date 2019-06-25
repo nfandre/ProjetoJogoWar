@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import br.edu.ifsp.spo.lg2a3.Jogo.Continente;
+import br.edu.ifsp.spo.lg2a3.Jogo.Jogador;
 import br.edu.ifsp.spo.lg2a3.Jogo.Tabuleiro;
 import br.edu.ifsp.spo.lg2a3.Jogo.Territorio;
+import br.edu.ifsp.spo.lg2a3.repositorio.JogadorRepositorio;
 
 class TabuleiroTest {
 
@@ -90,6 +92,33 @@ class TabuleiroTest {
 			}
 
 		}	
+	}
+	@Test
+	void verificar_separa_territorios_jogadores() {
+		int qtdJogadores = 2;
+		int i = 0;
+		Tabuleiro a = new Tabuleiro();
+		Jogador j1= new Jogador("andre");
+		Jogador j2= new Jogador("alisson");
+		ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+		jogadores.add(j1);
+		jogadores.add(j2);
+		
+		JogadorRepositorio jr = new JogadorRepositorio(jogadores);
+		a.separarTerritoriosJogadores(jogadores.size(), jr);
+		
+		for(Continente c: a.getContinentes()) {
+			for(Territorio t: c.Territorios) {	
+				
+				if(i == qtdJogadores)
+					i = 0;
+					
+			 	assertEquals(jr.getJogadores().get(i).getNomeUsuario(), t.getJogadorDono().getNomeUsuario());
+			 	//assertEquals(, jr.getJogadores().get(i).getTerritorios());
+			 	i++;
+			}
+		}
+		
 	}
 	
 

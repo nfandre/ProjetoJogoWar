@@ -76,7 +76,7 @@ class JogadorTest {
 		
 		j1.colocarExercitosDeAcordoComTerritorios(j1, "rosa");
 		j2.colocarExercitosDeAcordoComTerritorios(j2, "Azul");
-		
+		System.out.println(j1.getExercitos().size());
 		assertEquals(3, j1.getExercitos().size());
 		assertEquals(4, j2.getExercitos().size());
 
